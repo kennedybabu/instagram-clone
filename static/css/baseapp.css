@@ -1,3 +1,19 @@
 h3 {
     color: aqua;
 }
+
+.container {
+    max-width: 400px;
+    max-height: 500px;
+}
+
+.navbar {
+    background-color: transparent;
+    color: black;
+    border: none;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
