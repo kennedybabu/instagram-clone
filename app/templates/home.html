@@ -5,15 +5,19 @@
 
 <div class="container">
     {% for image in images %} 
-    <h2>{{ image.image_name }}</h2>
-    <h4>{{ image.image_caption }}</h4>
-    <p>{{ image.date_created }}</p>
-
-    <div class='container'>
-        <img src="{{ image.image_content.url }}" alt="photo">
-    </div>
-    <p>{{ image.likes }}</p>
-
+    <a href="{% url 'image' image.id%}">
+        <div class="post">
+            <h2>{{ image.image_name }}</h2>
+            <h4>{{ image.image_caption }}</h4>
+            <p>{{ image.date_created }}</p>
+    
+            <div class='container'>
+                <img src="{{ image.image_content.url }}" alt="photo">
+            </div>
+            <p>{{ image.likes }}</p>
+        </div>
+    </a>
+        <hr>
     {% endfor %} 
 </div>
 {% endblock %}
