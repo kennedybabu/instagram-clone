@@ -7,16 +7,12 @@ body {
     width: 614px;
     height: 768px;
 }
-.container {
-    max-width: 400px;
-    max-height: 500px;
-}
 
 .navbar {
     background-color: transparent;
     color: black;
     border: none;
-    padding: 0 10rem;
+    /* padding: 0 10rem; */
 }
 
 .image-container {
@@ -36,5 +32,6 @@ img {
 
 .upper-bar {
     max-height: 10%;
+    max-width: 100%;
     background-color: turquoise;
 }
