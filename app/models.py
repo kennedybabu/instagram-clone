@@ -9,7 +9,7 @@ class Profile(models.Model):
     date_joined = models.DateTimeField(auto_now_add=True)
     bio = models.TextField(blank=True)
     followers = ManyToManyField(User, related_name='followers', blank=True)
-    profile_photo = models.ImageField('image', blank=True, null=True)
+    profile_photo = models.ImageField('image', upload_to = 'profiles/', blank=True, null=True)
 
     def save_profile(self):
         '''

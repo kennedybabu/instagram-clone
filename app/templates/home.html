@@ -4,4 +4,10 @@
 {{ block.super }}
 
 <h3 class="text-center">lets go...</h3>
+{% for image in images %} 
+    <h2>{{ image.image_name }}</h2>
+    <h4>{{ image.image_caption }}</h4>
+    <img src="{{ image.image_content.url }}" alt="photo">
+
+{% endfor %} 
 {% endblock %}
