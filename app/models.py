@@ -44,4 +44,62 @@ class Profile(models.Model):
         return profile
 
     def __str__(self):
-        return self.username
+        return self.username 
+
+
+class Image(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image_content = models.ImageField('image')
+    image_name = models.CharField(max_length=40)
+    image_caption = models.TextField(null=True, blank=True)
+    likes = models.ManyToManyField(User, related_name='likes',blank=True)
+    date_created = models.DateTimeField(null=True, auto_now_add=True)
+
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
+    def update_image_caption(self, new_caption):
+        self.image_caption = new_caption
+
+    def image_likers(self, user):
+        self.likes.add(user)
+
+    def total_likes(self):
+        return self.likes.count()
+
+    def get_comments(self):
+        comments = Comment.objects.filter(image = self)
+        return comments
+
+
+    @classmethod
+    def get_images(cls, users):
+        posts = []
+        for user in users:
+            images = Image.objects.filter(user = users)
+            for image in images:
+                posts.append(image)
+        return posts
+    
+
+    def __str__(self):
+        return self.image_name
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ForeignKey(Image, on_delete=models.CASCADE)
+    comment_content = models.TextField()
+
+    def save_comment(self):
+        self.save()
+
+    def delete_comment(self):
+        self.delete()
+
+    def __str__(self):
+        return self.comment_content
