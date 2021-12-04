@@ -1,7 +1,12 @@
-h3 {
-    color: aqua;
+body {
+    background-color: rgba(var(--b3f,250,250,250),1);
 }
 
+
+.image-container {
+    width: 614px;
+    height: 768px;
+}
 .container {
     max-width: 400px;
     max-height: 500px;
@@ -11,9 +16,25 @@ h3 {
     background-color: transparent;
     color: black;
     border: none;
+    padding: 0 10rem;
+}
+
+.image-container {
+    background-color: tomato;
 }
 
 img {
     max-width: 100%;
     max-height: 100%;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+}
+
+.upper-bar {
+    max-height: 10%;
+    background-color: turquoise;
 }
