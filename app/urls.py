@@ -6,8 +6,10 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('login/', views.loginPage, name='login' ),
+    path('register/', views.registerUser, name='register' ),
     path('logout/', views.logoutUser, name='logout' ),
+    path('login/', views.loginPage, name='login' ),
+
     path('', views.home, name='home'),
     url(r'^image/(\d+)', views.image, name='image'),
     url(r'^search/', views.search_results, name='search_results'),
