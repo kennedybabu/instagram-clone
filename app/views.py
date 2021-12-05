@@ -1,10 +1,35 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import Http404
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import Image, Profile
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
+
+def loginPage(request):
+    context = {
+
+    }
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        try:
+            user = Profile.objects.get(username = username)
+        except:
+            messages.error(request, 'user does not exist')
+
+        user = authenticate(request, username = username, password = password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Username or Password does not exist')
+        
+    return render(request, 'login.html', context)
 
 def home(request):
     images = Image.objects.all()  

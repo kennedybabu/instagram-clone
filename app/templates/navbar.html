@@ -32,8 +32,33 @@
       <div class="icons-tray">
           <a href=""><img src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638687421/home_n1ruo9.svg" alt="home icon"></a>
           <a href=""><img src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638687421/facebook-messenger_thldyo.svg" alt="messenger icon"></a>
-          <a href=""><img src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638687421/new-post_omiio8.svg" alt="new post icon"></a>
+          <a data-toggle="modal" data-target="#modal" href=""><img src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638687421/new-post_omiio8.svg" alt="new post icon"></a>
           <a href=""><img src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638687421/compass_cebnz5.svg" alt="location icon"></a>
+          <a href="{% url 'login' %}">login</a>
+      </div>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        Launch demo modal
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">create new post</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="div">
+                <h3>Drag photos and videos here</h3>
+              </div>
+            </div>            
+          </div>
+        </div>
       </div>
   </div>
 </nav>

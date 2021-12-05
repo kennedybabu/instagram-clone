@@ -38,6 +38,12 @@ class Profile(models.Model):
         '''
         return self.followers.count()
 
+
+    # @classmethod
+    # def get_profiles(cls):
+    #     profiles = Profile.objects.all()
+    #     return profiles
+
     @classmethod
     def search_profile(cls, search_query):
         profile = cls.objects.filter(username__icontains = search_query)
