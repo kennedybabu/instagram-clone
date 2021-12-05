@@ -28,6 +28,18 @@ body {
 .icons-tray img {
     width: 35px;
     height: 35px;
+    margin-right: 8px;
+}
+
+body > nav > div.container-fluid.col-md-4 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+body > nav {
+    display: flex;
+    align-items: center;
 }
 
 body > nav > div.container-fluid.col-md-4 > div > a > img {
@@ -83,6 +95,11 @@ img {
 .icons-container img {
     max-height: 20px;
     max-width: 20px;
+}
+
+body > div > div > div > div.content.col-md-5 > div:nth-child(3) > div > div > div > div.right-icon-container.col-md-6 {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* .sidebar-item {
