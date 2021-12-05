@@ -18,12 +18,16 @@ body {
     color: black;
     border: none;
     background-color: #fafafa;
-    /* background-color: transparent; */
+    border-bottom: 1px solid grey;
 }
 
 .navbar-brand {
-    height: 80px;
- 
+    height: 80px; 
+}
+
+.icons-tray img {
+    width: 35px;
+    height: 35px;
 }
 
 body > nav > div.container-fluid.col-md-4 > div > a > img {
@@ -43,7 +47,7 @@ img {
 .post {
     display: flex;
     flex-direction: column;
-    height: 600px;
+    min-height: 600px;
     border: 1px solid black;
 }
 
@@ -75,3 +79,22 @@ img {
 .icons-container {
     display: flex;
 }
+
+.icons-container img {
+    max-height: 20px;
+    max-width: 20px;
+}
+
+/* .sidebar-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.sticky-column {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+} */
