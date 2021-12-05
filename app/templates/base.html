@@ -19,7 +19,9 @@
 </head>
 <body>
     {% include 'navbar.html' %}
-    {% block content %} {% endblock %}
+    <div class="container base">
+        {% block content %} {% endblock %}
+    </div>
     
 
  {% block scripts %}
