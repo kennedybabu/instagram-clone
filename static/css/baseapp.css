@@ -10,8 +10,16 @@ body {
     margin-top: 5rem;   
 } 
 
+
+
 .image-container {
-    height: 768px;
+    height: 60%;
+    min-width: 100%;
+}
+
+.image-container img {
+    min-height: 100%;
+    min-width: 100%;
 }
 
 .navbar {
@@ -47,10 +55,6 @@ body > nav > div.container-fluid.col-md-4 > div > a > img {
     height: 80px;
 }
 
-.image-container {
-    min-height: 80%;
-}
-
 img {
     max-width: 100%;
     max-height: 100%;
@@ -59,7 +63,7 @@ img {
 .post {
     display: flex;
     flex-direction: column;
-    min-height: 600px;
+    /* height: 600px; */
     border: 1px solid black;
 }
 
@@ -90,6 +94,9 @@ img {
 
 .icons-container {
     display: flex;
+    border-bottom: 1px solid gray;
+    margin-bottom: .7rem;
+    margin-top: .5rem;
 }
 
 .icons-container img {
@@ -102,16 +109,20 @@ body > div > div > div > div.content.col-md-5 > div:nth-child(3) > div > div > d
     justify-content: flex-end;
 }
 
-/* .sidebar-item {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+body > div > div > div > div.content.col-md-5 > div:nth-child(6) > div.icons-container > div > div > div.right-icon-container.col-md-6 {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.sticky-column {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-} */
+.comment-section {
+    padding: .3rem 0;
+}
+
+.input-tray input {
+    border: none;
+}
+
+.smiley img {
+    width: 25px;
+    height: 25px;
+}
