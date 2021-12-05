@@ -6,9 +6,13 @@
 <div class="container intro">
     <div class="row">
         <div class="left col-md-2">
-            left
+            
         </div>
         <div class="content col-md-5">
+
+            <div class="top-bar">
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, eligendi.</h4>
+            </div>
             {% for image in images %} 
             <a href="{% url 'image' image.id%}">
                 <div class="post">
@@ -29,6 +33,10 @@
             {% endfor %} 
         </div>
         <div class="recommendations col-md-3">
+
+            <div class="top-bar">
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, eligendi.</h4>
+            </div>
             <p>m Ipsum is simply dummy text of the 
                 printing and typesetting industry. Lorem 
                 Ipsum has been the industry's standard dummy 
@@ -42,7 +50,7 @@
             </p>
         </div>
         <div class="empty col-md-2">
-            empty
+        
         </div>
 
     </div>
