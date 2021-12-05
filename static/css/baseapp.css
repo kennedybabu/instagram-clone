@@ -32,7 +32,6 @@ body > nav > div.container-fluid.col-md-4 > div > a > img {
 }
 
 .image-container {
-    /* background-color: tomato; */
     min-height: 80%;
 }
 
@@ -48,10 +47,31 @@ img {
     border: 1px solid black;
 }
 
-.upper-bar {
-    min-height: 15%;
+.profile {
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    background-color: tomato;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile img {
     max-width: 100%;
-    background-color: turquoise;
+    max-height: 100%;
+    border-radius: 50px;
+}
+
+.upper-bar {
+    min-height: 13%;
+    max-width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /* background-color: turquoise; */
 }
 
 .icons-container {
