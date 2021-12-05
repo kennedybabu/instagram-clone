@@ -1,5 +1,6 @@
 body {
-    background-color: #fafafa;
+    max-width: 100vw;
+    background-color: #efefef;
 }
 
 .base {
@@ -24,9 +25,10 @@ body {
 
 .navbar {
     color: black;
+    overflow: hidden;
     border: none;
     background-color: #fafafa;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid  rgba(128, 128, 128, 0.37);
 }
 
 .navbar-brand {
@@ -63,8 +65,9 @@ img {
 .post {
     display: flex;
     flex-direction: column;
+    background-color: #fafafa;
     /* height: 600px; */
-    border: 1px solid black;
+    border: 1px solid  rgba(128, 128, 128, 0.37);
 }
 
 .profile {
@@ -94,9 +97,8 @@ img {
 
 .icons-container {
     display: flex;
-    border-bottom: 1px solid gray;
-    margin-bottom: .7rem;
-    margin-top: .5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .icons-container img {
@@ -114,8 +116,19 @@ body > div > div > div > div.content.col-md-5 > div:nth-child(6) > div.icons-con
     justify-content: flex-end;
 }
 
+.post-details {
+    padding-left: 1.8rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.37);
+
+}
+
+.post-details span {
+    font-weight: bolder;
+
+}
+
 .comment-section {
-    padding: .3rem 0;
+    padding: .8rem 0;
 }
 
 .input-tray input {
