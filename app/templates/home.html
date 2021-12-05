@@ -17,9 +17,9 @@
             <a href="{% url 'image' image.id%}">
                 <div class="post">
                     <div class="upper-bar">
-                        <div class="profile">
-                            <img src="{{ image.user.profile.profile_photo.url }}" alt="">
-                        </div>
+                            <div class="profile">
+                                <img src="{{ image.user.profile.profile_photo.url }}" alt="">
+                            </div>                        
                         <h5>{{ image.user.profile.username }}</h5>
                     </div>
                     <div class="image-container">
@@ -73,7 +73,9 @@
             <div class="sidebar-item">
                 <div class="sticky-column">
                     <div class="top-bar">
-                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, eligendi.</h4>
+                        <!-- <div class="profile bigger">
+                            <img src="{{ image.user.profile.profile_photo.url }}" alt="">
+                        </div> -->
                     </div>
                     <p>m Ipsum is simply dummy text of the 
                         printing and typesetting industry. Lorem 

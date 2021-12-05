@@ -3,6 +3,7 @@ from django.http.response import Http404
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import Image, Profile
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
@@ -35,6 +36,7 @@ def logoutUser(request):
     logout(request)
     return redirect('home')
 
+@login_required(login_url='login')
 def home(request):
     images = Image.objects.all()  
 
