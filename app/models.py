@@ -77,6 +77,12 @@ class Image(models.Model):
 
 
     @classmethod
+    def search_image(cls, search_query):
+        image = cls.objects.filter(image_name__icontains = search_query)
+        return image
+
+
+    @classmethod
     def get_images(cls, users):
         posts = []
         for user in users:

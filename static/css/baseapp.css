@@ -1,22 +1,25 @@
 body {
-    background-color: rgba(var(--b3f,250,250,250),1);
+    /* background-color: rgba(var(--b3f,250,250,250),1); */
+    background-color: #fafafa;
 }
 
+.intro {
+    margin-top: 5rem;   
+} 
 
 .image-container {
-    width: 614px;
     height: 768px;
 }
 
 .navbar {
-    background-color: transparent;
+    background-color: rgba(var(--b3f,250,250,250),1);
     color: black;
     border: none;
-    /* padding: 0 10rem; */
 }
 
 .image-container {
-    background-color: tomato;
+    /* background-color: tomato; */
+    min-height: 80%;
 }
 
 img {
@@ -27,11 +30,16 @@ img {
 .post {
     display: flex;
     flex-direction: column;
-    height: 800px;
+    height: 600px;
+    border: 1px solid black;
 }
 
 .upper-bar {
-    max-height: 10%;
+    max-height: 20%;
     max-width: 100%;
     background-color: turquoise;
+}
+
+.icons-container {
+    display: flex;
 }

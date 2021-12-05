@@ -3,24 +3,49 @@
 {% block content %} 
 {{ block.super }}
 
-<div class="container">
-    {% for image in images %} 
-    <a href="{% url 'image' image.id%}">
-        <div class="post">
-            <div class="upper-bar">
-                iko nene
-            </div>
-            <div class="image-container">
-                <img src="{{ image.image_content.url }}" alt="photo">
-            </div> 
-            <div class="icons-container">
-                <p>message</p>
-                <p>like</p>
-            </div>       
-            
+<div class="container intro">
+    <div class="row">
+        <div class="left col-md-2">
+            left
         </div>
-    </a>
-        <hr>
-    {% endfor %} 
+        <div class="content col-md-5">
+            {% for image in images %} 
+            <a href="{% url 'image' image.id%}">
+                <div class="post">
+                    <div class="upper-bar">
+                        iko nene
+                    </div>
+                    <div class="image-container">
+                        <img src="{{ image.image_content.url }}" alt="photo">
+                    </div> 
+                    <div class="icons-container">
+                        <p>message</p>
+                        <p>like</p>
+                    </div>       
+                    
+                </div>
+            </a>
+            <hr>
+            {% endfor %} 
+        </div>
+        <div class="recommendations col-md-3">
+            <p>m Ipsum is simply dummy text of the 
+                printing and typesetting industry. Lorem 
+                Ipsum has been the industry's standard dummy 
+                text ever since the 1500s, when an unknown printer 
+                took a galley of type and scrambled it to make a 
+                type specimen book. It has survived not only five 
+                centuries, but also the leap into electronic typesetting
+                , remaining essentially unchanged. It was popularised i
+                n the 1960s with the release of Letraset sheets containing 
+                
+            </p>
+        </div>
+        <div class="empty col-md-2">
+            empty
+        </div>
+
+    </div>
+   
 </div>
 {% endblock %}

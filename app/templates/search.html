@@ -1,0 +1,23 @@
+{% extends 'base.html' %}  
+{% block content %} 
+
+
+{% if searched_profiles %}
+    {% for profile in searched_profiles %} 
+    <h2>{{ profile.username }}</h2>
+    <h1>Lorem, ipsum dolor sit amet 
+        consectetur adipisicing elit.
+        Fugiat laborum debitis eum!
+        Lorem ipsum dolor sit 
+        amet consectetur adipisicing 
+        elit. Eaque excepturi reprehenderit 
+        itaque?</h1>
+
+    {% endfor %}
+{% else %}
+
+<h1>sorry bud</h1>
+
+{% endif %}
+
+{% endblock %}
