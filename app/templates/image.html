@@ -4,19 +4,6 @@
    <div class="container">
     <h3>{{ image.image_name }}</h3>
 
-    <!-- <div class="comments">
-        <div class="row">
-            .col-md-7
-        </div>
-        <h3>comments</h3>
-       
-        {% for comment in comments %} 
-            <p>{{ comment.user.username }}</p>
-            <h4>{{ comment.comment_content }}</h4>        
-        {% endfor %}
-    </div> -->
-
-
 <div class="comments">
     <div class="row">
         <div class="col-md-7">
@@ -28,28 +15,17 @@
             <p>{{ image.user.username }}</p>
             <small>{{ image.date_created|timesince }} ago</small>
 
+
             {% for comment in comments %} 
-            <p>{{ comment.user.username }}</p>
-            <h4>{{ comment.comment_content }}</h4>        
-        {% endfor %}
+                <p>{{ comment.user.username }}</p>
+                <h4>{{ comment.comment_content }}</h4> 
+                <div class="comment-container">
+
+                </div>       
+            {% endfor %}
+
         </div>
-        <div class="comments-section">
-            <form action="" method="POST">
-                {% csrf_token %}
-                <input type="text" name="comment_content" placeholder="Add a comment...">
-            </form>
-            <!-- {% if comment in comments %}  -->
-                <!-- {% for comment in comments %} 
-                    <p>{{ comment.comment_content }}</p>
-                {% endfor %} -->
-                    {% for comment in comments %} 
-                        <p>{{ comment.user.username }}</p>
-                        <h4>{{ comment.comment_content }}</h4>        
-                    {% endfor %}
-            <!-- {% else %}
-                <h3>sorry there are no comments</h3>
-            {% endif %} -->
-        </div>
+       
     </div>
     
 </div>

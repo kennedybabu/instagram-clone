@@ -1,22 +1,27 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-<h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea sequi sunt asperiores!</h4>
-login
-<div class="container">
+<!-- <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea sequi sunt asperiores!</h4>
+login -->
+<div class="container login-page">
     <div class="login-form">
-        <form action="" method='POST'>
-            {% csrf_token %}
-            <input type="text" name='username' placeholder="username">
-
-            <input type="password" name='password' placeholder="Enter password"> 
-
-            <div>
-
-            <button type="submit" value="login">login</button>
-            </div>
-
-        </form>
+        <!-- <div class="brand"> -->
+            <img clas='navbar-logo' src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638633829/Instagram_logo.svg_yjnzzz.png" alt="Instagram_logo">
+        <!-- </div> -->
+        <div>
+            <form action="" method='POST'>
+                {% csrf_token %}
+                <input type="text" name='username' placeholder="username">
+    
+                <input type="password" name='password' placeholder="Enter password"> 
+    
+                <!-- <div> -->
+    
+                <button type="submit" value="login">login</button>
+                <!-- </div> -->
+    
+            </form>
+        </div>
         <div>
             <p>haven't signed up yet?</p>
             <a href="{% url 'register' %}">sign up</a>

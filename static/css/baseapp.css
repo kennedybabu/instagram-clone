@@ -156,21 +156,51 @@ body > div > div > div > div.content.col-md-5 > div:nth-child(6) > div.icons-con
     justify-content: center;
 }
 
+.login-page {
+    margin: 0 auto;
+}
+
 
 .login-form {
     width: 300px;
     height: 400px;
+    margin: 0 auto;
     background-color: #fafafa;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 5rem;
+    padding: 4rem 0;
     border: 1px solid  rgba(128, 128, 128, 0.37);
 
 }
 
 .login-form input {
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+
+.login-form button {
     min-width: 80%;
 }
+
+.login-form img {
+    width: 150px;
+    height: 50px;
+}
+.comment-container {
+    min-width: 80%;
+    padding: .5rem 1rem;
+    background-color: #fafafa;
+   
+}
  
+
+form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

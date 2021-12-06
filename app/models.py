@@ -58,7 +58,7 @@ class Image(models.Model):
     image_content = models.ImageField('image')
     image_name = models.CharField(max_length=40)
     image_caption = models.TextField(null=True, blank=True)
-    likes = models.ManyToManyField(User, related_name='likes',blank=True)
+    likes = models.IntegerField(default=0)
     date_created = models.DateTimeField(null=True, auto_now_add=True)
 
 

@@ -106,3 +106,11 @@ def search_results(request):
     else:
         message = 'You havent searched for any profile'
         return render(request, 'search.html', {'message':message})
+
+
+def like_post(request, pk):
+    post = Image.objects.get(pk=pk)
+    post.like += 1
+    post.save()
+    return redirect('home')
+
