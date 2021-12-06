@@ -235,4 +235,36 @@ form {
 
 .icons {
     display: flex;
+    flex-direction: row;
+    width: 350px;
+}
+
+
+.icons img {
+    width: 135px;
+    height: 40px;
+}
+.icon-box {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;    
+}
+
+.wrapper li {
+    list-style: none;
+}
+
+.register-page-footer {
+    text-align: center;
+    margin-top: 2rem;
 }
