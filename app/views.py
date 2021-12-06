@@ -2,7 +2,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import Http404
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from .models import Image, Profile
+from .models import Comment, Image, Profile
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
@@ -43,7 +43,7 @@ def registerUser(request):
     context = {
         'form':form
     }
-    
+
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -74,8 +74,11 @@ def image(request, image_id):
         image = Image.objects.get( id = image_id)
     except ObjectDoesNotExist:
         raise Http404()
+    comments = image.comment_set.all()
+    # comments = Comment.objects.get()
     context = {
-        'image':image
+        'image':image,
+        'comments': comments
     }
     return render(request, 'image.html', context)
 

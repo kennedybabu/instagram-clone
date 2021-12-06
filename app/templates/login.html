@@ -4,16 +4,18 @@
 <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea sequi sunt asperiores!</h4>
 login
 <div class="container">
-    <div>
+    <div class="login-form">
         <form action="" method='POST'>
             {% csrf_token %}
-            <label>username</label>
             <input type="text" name='username' placeholder="username">
 
-            <label>password</label>
             <input type="password" name='password' placeholder="Enter password"> 
 
-            <input type="submit" value="login">
+            <div>
+
+            <button type="submit" value="login">login</button>
+            </div>
+
         </form>
         <div>
             <p>haven't signed up yet?</p>

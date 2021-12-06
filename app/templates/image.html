@@ -1,5 +1,19 @@
 {% extends 'base.html' %} 
 
 {% block content %} 
-    <h2>aahh shit here we go again</h2>
+    <h3>{{ image.image_name }}</h3>
+
+    <div class="comments">
+        <h3>comments</h3>
+
+        <!-- {% for comment in comments %} 
+            <div>
+                <small>@{{ comment.user.username }}</small>
+            </div>        
+        {% endfor %} -->
+        {% for comment in comments %} 
+            <p>{{ comment.user.username }}</p>
+        
+        {% endfor %}
+    </div>
 {% endblock %}

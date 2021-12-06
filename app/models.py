@@ -106,6 +106,8 @@ class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ForeignKey(Image, on_delete=models.CASCADE)
     comment_content = models.TextField()
+    # date_created = models.DateTimeField(null=True, auto_now_add=True)
+
 
     def save_comment(self):
         self.save()
