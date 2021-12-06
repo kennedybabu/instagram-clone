@@ -1,6 +1,8 @@
 from django.db import models
 from django.db.models.fields.related import ManyToManyField
 from django.contrib.auth.models import User
+from tinymce.models import HTMLField
+
 
 # Create your models here.
 class Profile(models.Model):
@@ -58,7 +60,7 @@ class Image(models.Model):
     image_content = models.ImageField('image')
     image_name = models.CharField(max_length=40)
     image_caption = models.TextField(null=True, blank=True)
-    likes = models.IntegerField(default=0)
+    likes = models.ManyToManyField(User, related_name='likers', default=0)
     date_created = models.DateTimeField(null=True, auto_now_add=True)
 
 
@@ -106,7 +108,7 @@ class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ForeignKey(Image, on_delete=models.CASCADE)
     comment_content = models.TextField()
-    # date_created = models.DateTimeField(null=True, auto_now_add=True)
+    date_created = models.DateTimeField(null=True, auto_now_add=True)
 
 
     def save_comment(self):

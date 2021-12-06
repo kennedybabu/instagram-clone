@@ -180,6 +180,7 @@ body > div > div > div > div.content.col-md-5 > div:nth-child(6) > div.icons-con
 .login-form input {
     width: 80%;
     margin-bottom: 1rem;
+    padding: .2rem 1rem;
 }
 
 
@@ -195,7 +196,14 @@ body > div > div > div > div.content.col-md-5 > div:nth-child(6) > div.icons-con
     min-width: 80%;
     padding: .5rem 1rem;
     background-color: #fafafa;
-   
+    margin-top: .4rem;  
+}
+
+.comment-post input {
+    min-width: 100%;
+    margin-top: 1rem;
+    border: none;
+    padding: .3rem .2rem;
 }
  
 
