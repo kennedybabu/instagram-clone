@@ -1,13 +1,10 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-<!-- <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea sequi sunt asperiores!</h4>
-login -->
+
 <div class="container login-page">
     <div class="login-form">
-        <!-- <div class="brand"> -->
             <img clas='navbar-logo' src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638633829/Instagram_logo.svg_yjnzzz.png" alt="Instagram_logo">
-        <!-- </div> -->
         <div>
             <form action="" method='POST'>
                 {% csrf_token %}
@@ -15,16 +12,34 @@ login -->
     
                 <input type="password" name='password' placeholder="Enter password"> 
     
-                <!-- <div> -->
     
                 <button type="submit" value="login">login</button>
-                <!-- </div> -->
     
             </form>
+            <!-- OR -->
         </div>
-        <div>
+        <!-- <div>
             <p>haven't signed up yet?</p>
             <a href="{% url 'register' %}">sign up</a>
+        </div> -->
+    </div>
+
+    <div class="lower-container">
+        <p>haven't signed up yet?</p>
+        <a href="{% url 'register' %}">sign up</a>
+    </div>
+
+    <div class="icon-box">
+        <h3>get the app.</h3>
+        <div class="container icons">
+            <div class="android col-md-6">
+                yes
+                <img src="" alt="">
+            </div>
+            <div class="ios  col-md-6">
+                yes
+                <img src="" alt="">
+            </div>
         </div>
     </div>
 </div>

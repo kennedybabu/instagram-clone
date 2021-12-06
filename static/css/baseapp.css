@@ -162,12 +162,12 @@ body > div > div > div > div.content.col-md-5 > div:nth-child(6) > div.icons-con
 
 
 .login-form {
-    width: 300px;
-    height: 400px;
+    width: 350px;
+    height: 450px;
     margin: 0 auto;
     background-color: #fafafa;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,11 +186,16 @@ body > div > div > div > div.content.col-md-5 > div:nth-child(6) > div.icons-con
 
 .login-form button {
     min-width: 80%;
+    background-color: #0095F64D;
+    color: #fafafa;
+    border: none;
+    border-radius: 1px;
 }
 
 .login-form img {
     width: 150px;
     height: 50px;
+    margin-bottom: 7rem;
 }
 .comment-container {
     min-width: 80%;
@@ -211,4 +216,23 @@ form {
     align-items: center;
     display: flex;
     flex-direction: column;
+    min-width: 100%;
+}
+
+.lower-container {
+    background-color: #fafafa;
+    height: 60px;
+    width: 350px;
+    border: 1px solid  rgba(128, 128, 128, 0.37);
+    margin: 0 auto;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: .5rem 0;
+}
+
+.icons {
+    display: flex;
 }
