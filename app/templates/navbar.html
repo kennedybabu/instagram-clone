@@ -32,7 +32,7 @@
       <div class="icons-tray">
           <a href="{% url 'home' %}"><img src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638687421/home_n1ruo9.svg" alt="home icon"></a>
           <a href=""><img src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638687421/facebook-messenger_thldyo.svg" alt="messenger icon"></a>
-          <a data-toggle="modal" data-target="#modal" href=""><img src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638687421/new-post_omiio8.svg" alt="new post icon"></a>
+          <a href="{% url 'new_image' %}"><img src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638687421/new-post_omiio8.svg" alt="new post icon"></a>
           <a href=""><img src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638687421/compass_cebnz5.svg" alt="location icon"></a>
 
           {% if request.user.is_authenticated %}
@@ -52,7 +52,7 @@
      
 
       <!-- Modal -->
-      <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <!-- <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -68,7 +68,7 @@
             </div>            
           </div>
         </div>
-      </div>
+      </div> -->
   </div>
 </nav>
 </body>

@@ -14,6 +14,8 @@ urlpatterns = [
     path('', views.home, name='home'),
     url(r'^image/(\d+)', views.image, name='image'),
     url(r'^search/', views.search_results, name='search_results'),
+    url(r'^new/image$', views.new_image, name='new_image'),
+
 ]
 
 if settings.DEBUG:

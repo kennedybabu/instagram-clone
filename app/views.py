@@ -2,6 +2,8 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import Http404
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
+
+from app.forms import NewImageForm
 from .models import Comment, Image, Profile
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -68,8 +70,23 @@ def home(request):
 
     return render(request, 'home.html', context)
 
-def image(request, image_id):
+def new_image(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.user = current_user
+            image.save()
+        return redirect('home')
+    else:
+        form = NewImageForm()
+    context = {
+        'form':form
+    }
+    return render(request, 'new_image.html', context)
 
+def image(request, image_id):
     try:
         image = Image.objects.get( id = image_id)
     except ObjectDoesNotExist:

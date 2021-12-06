@@ -19,6 +19,7 @@
                         <div class="comment-container">
                             <small>{{ comment.user.username }}</small>
                             <h4>{{ comment.comment_content }}</h4> 
+                            <small>{{ comment.date_created|timesince }}</small>
                         </div>       
                     {% endfor %}
 
