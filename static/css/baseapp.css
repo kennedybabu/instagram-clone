@@ -11,8 +11,6 @@ body {
     margin-top: 5rem;   
 } 
 
-
-
 .image-container {
     height: 60%;
     min-width: 100%;
@@ -86,6 +84,10 @@ img {
     height: 60%;
     border-radius: 50px;
 }
+.top-bar {
+    background-color: #fafafa;
+
+}
 
 .upper-bar {
     min-height: 13%;
@@ -144,7 +146,9 @@ body > div > div > div > div.content.col-md-5 > div:nth-child(6) > div.icons-con
     height: 25px;
 }
 
-/* modal */
+.comments {
+    margin-top: 4rem;
+}
 
 .modal-body {
     display: flex;

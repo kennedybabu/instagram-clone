@@ -75,7 +75,15 @@ def image(request, image_id):
     except ObjectDoesNotExist:
         raise Http404()
     comments = image.comment_set.all()
-    # comments = Comment.objects.get()
+
+    if request.method == 'POST':
+        comment = Comment.objects.create (
+            user = request.user,
+            image = image,
+            comment_content = request.POST.get('comment_content')
+        )
+
+        return redirect('home')
     context = {
         'image':image,
         'comments': comments

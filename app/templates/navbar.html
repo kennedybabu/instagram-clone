@@ -45,13 +45,7 @@
           {% endif %}
 
           {% if request.user.is_authenticated %} 
-             <P>Hello {{request.user}}</P>
-             <!-- <div class="profile">
-              <img src="{{ image.user.profile.profile_photo.url }}" alt="">
-            </div> -->
-             <!-- <a href="{% url 'logout' %}">logout</a> -->
-          {% else %}
-            <!-- <a href="{% url 'login' %}">login</a> -->
+             <P>Hello {{request.user}}</P>            
           {% endif %}
       </div>
 

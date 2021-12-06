@@ -53,8 +53,11 @@
                                 <div class="smiley col-md-1">
                                     <img src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1638691186/smiley_pliq6m.png" alt="smiley icon">
                                 </div>
-                                <div class="input-tray col-md-3">
-                                    <input type="text" placeholder="Add a comment...">
+                                <div class="input-tray col-md-3 cooment-form">
+                                    <form action="" method="POST">
+                                        {% csrf_token %}
+                                        <input type="text" name="comment_content" placeholder="Add a comment...">
+                                    </form>
                                 </div>
                                 <div class="send-comment col-md-1">
                                     <a href="">Post</a>
