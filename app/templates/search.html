@@ -2,22 +2,19 @@
 {% block content %} 
 
 
-{% if searched_profiles %}
-    {% for profile in searched_profiles %} 
-    <h2>{{ profile.username }}</h2>
-    <h1>Lorem, ipsum dolor sit amet 
-        consectetur adipisicing elit.
-        Fugiat laborum debitis eum!
-        Lorem ipsum dolor sit 
-        amet consectetur adipisicing 
-        elit. Eaque excepturi reprehenderit 
-        itaque?</h1>
+<div class="container search">
+    {% if searched_profiles %}
+        {% for profile in searched_profiles %} 
+        <h2>{{ profile.username }}</h2>
+        
+        
+        {% endfor %}
+    {% else %}
 
-    {% endfor %}
-{% else %}
+    <h1>sorry the searched profile doesn't exist</h1>
 
-<h1>sorry the searched profile doesn't exist</h1>
+    {% endif %}
 
-{% endif %}
+</div>
 
 {% endblock %}

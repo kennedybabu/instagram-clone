@@ -113,7 +113,6 @@ def search_results(request):
     if 'profile' in request.GET and request.GET['profile']:
         search_query = request.GET.get('profile')
         searched_profiles = Profile.search_profile(search_query)
-        print(searched_profiles)
         message = f'{search_query}'
         context = {
            'message':message,
