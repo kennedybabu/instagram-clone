@@ -12,15 +12,15 @@
     {{ form.media }}
 
     {% block styles %} 
-    <link rel="stylesheet" href="{% static 'css/news.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/baseapp.css' %}"> 
     {% endblock %}
 </head>
 <body>
 
     <form  action="{% url 'new_image '%}" method="post" enctype="multipart/form-data">
-        {%csrf_token%}
+        {% csrf_token %}
     
-        {% bootstrap_form form%}
+        {% bootstrap_form %}
         <input type="submit" class="btn btn-success btn-lg" value="Post">
     </form>
     
@@ -30,3 +30,5 @@
     
 </body>
 </html>
+
+

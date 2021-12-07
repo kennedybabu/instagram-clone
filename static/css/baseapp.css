@@ -64,7 +64,6 @@ img {
     display: flex;
     flex-direction: column;
     background-color: #fafafa;
-    /* height: 600px; */
     border: 1px solid  rgba(128, 128, 128, 0.37);
 }
 
@@ -86,7 +85,6 @@ img {
 }
 .top-bar {
     background-color: #fafafa;
-
 }
 
 .upper-bar {
@@ -160,7 +158,6 @@ body > div > div > div > div.content.col-md-5 > div:nth-child(6) > div.icons-con
     margin: 0 auto;
 }
 
-
 .login-form {
     width: 350px;
     height: 450px;
@@ -182,7 +179,6 @@ body > div > div > div > div.content.col-md-5 > div:nth-child(6) > div.icons-con
     margin-bottom: 1rem;
     padding: .2rem 1rem;
 }
-
 
 .login-form button {
     min-width: 80%;
@@ -267,4 +263,9 @@ form {
 .register-page-footer {
     text-align: center;
     margin-top: 2rem;
+}
+
+.bigger img {
+    height: 50px;
+    width: 50px;
 }
