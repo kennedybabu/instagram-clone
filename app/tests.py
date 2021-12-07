@@ -37,3 +37,30 @@ class TestProfile(TestCase):
 
         self.assertEqual(found_profiles[0].username, self.user_profile.username)
 
+
+
+class TestImage(TestCase):
+    def setUp(self):
+        self.user = User.objects.create(username='kenny')
+        self.user.save()
+
+        self.image = Image(user = self.user, image_path = 'path', image_caption='wonders')
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.image, Image))
+
+    def test_save_image(self):
+        self.image.save_image()
+        images = Image.objects.all()
+
+        self.assertTrue(len(images)> 0)
+
+    def test_delete_image(self):
+        self.image.save_image()
+        self.image.delete_image()
+        images = Image.objects.all()
+
+        self.assertTrue(len(images) == 0)
+
+
+
