@@ -9,7 +9,7 @@ urlpatterns = [
     path('register/', views.registerUser, name='register' ),
     path('logout/', views.logoutUser, name='logout' ),
     path('login/', views.loginPage, name='login' ),
-    path('<int:pk>/', views.like_post, name="like_post"),
+    path('like/<int:id>/', views.like_image, name='like_image'),
 
     path('', views.home, name='home'),
     url(r'^image/(\d+)', views.image, name='image'),

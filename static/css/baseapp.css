@@ -93,6 +93,7 @@ img {
     background-color: #fafafa;
     display: flex;
     align-items: center;
+    border: 1px solid  rgba(128, 128, 128, 0.37);
 }
 
 .top-bar-icons {
@@ -252,7 +253,6 @@ form {
     flex-direction: row;
     width: 350px;
 }
-
 
 .icons img {
     width: 135px;

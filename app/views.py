@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse
 
 from app.forms import NewImageForm
-from .models import Comment, Image, Profile
+from .models import Comment, Image, Profile, Likes
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
@@ -125,13 +125,27 @@ def search_results(request):
         return render(request, 'search.html', {'message':message})
 
 
-def like_post(request, pk):
-    post = Image.objects.get(pk=pk)
-    post.like += 1
-    post.save()
-    return redirect('home')
+def like_image(request, id):
+    """Display function for Image Likes"""
+    likes = Likes.objects.filter(image_id=id).first()
+    if Likes.objects.filter(image_id=id, user_id=request.user.id).exists():
+        likes.delete()
+        image = Image.objects.get(id=id)
+        if image.total_likes == 0:
+            image.total_likes = 0
+            image.save()
+        else:
+            image.total_likes += 1
+            image.save()
+        return redirect('home')
+    else:
+        likes = Likes(image_id=id, user_id=request.user.id)
+        likes.save()
+        image = Image.objects.get(id=id)
+        image.total_likes = image.total_likes +1
+        image.save()
+        return redirect('home')
 
 
-# def profile(request, pk):
 
 

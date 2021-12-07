@@ -41,10 +41,6 @@ class Profile(models.Model):
         return self.followers.count()
 
 
-    # @classmethod
-    # def get_profiles(cls):
-    #     profiles = Profile.objects.all()
-    #     return profiles
 
     @classmethod
     def search_profile(cls, search_query):
@@ -60,7 +56,7 @@ class Image(models.Model):
     image_content = models.ImageField('image')
     image_name = models.CharField(max_length=40)
     image_caption = models.TextField(null=True, blank=True)
-    likes = models.ManyToManyField(User, related_name='likers', default=0)
+    total_likes = models.IntegerField(default=0)
     date_created = models.DateTimeField(null=True, auto_now_add=True)
 
 
@@ -73,15 +69,18 @@ class Image(models.Model):
     def update_image_caption(self, new_caption):
         self.image_caption = new_caption
 
-    def image_likers(self, user):
+    def like_image(self, user):
         self.likes.add(user)
 
-    def total_likes(self):
+    def total_like(self):
         return self.likes.count()
 
     def get_comments(self):
         comments = Comment.objects.filter(image = self)
         return comments
+
+    def get_total_likes(self):
+        return self.likes.count()
 
 
     @classmethod
@@ -119,3 +118,11 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment_content
+
+class Likes(models.Model):
+
+    image = models.ForeignKey(Image, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user
