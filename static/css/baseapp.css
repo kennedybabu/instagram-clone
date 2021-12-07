@@ -84,6 +84,7 @@ img {
 }
 
 .profile img {
+    height: 80px;border: 2px solid rgb(241, 119, 119);
     width: 60%;
     height: 60%;
     border-radius: 50px;
@@ -119,6 +120,7 @@ img {
 .icons-container img {
     max-height: 20px;
     max-width: 20px;
+
 }
 
 body > div > div > div > div.content.col-md-5 > div:nth-child(3) > div > div > div > div.right-icon-container.col-md-6 {
@@ -157,6 +159,7 @@ body > div > div > div > div.content.col-md-5 > div:nth-child(6) > div.icons-con
 .smiley img {
     width: 25px;
     height: 25px;
+
 }
 
 .comments {
@@ -307,4 +310,10 @@ form {
 
 .search {
     margin-top: 5rem;
+}
+
+.searched-pic img{
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;border: 2px solid rgb(241, 119, 119);
 }

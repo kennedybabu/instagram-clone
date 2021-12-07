@@ -6,7 +6,9 @@
     {% if searched_profiles %}
         {% for profile in searched_profiles %} 
         <h2>{{ profile.username }}</h2>
-        
+        <div class="searched-pic">
+            <img src="{{ profile.profile_photo.url  }}" alt="">
+        </div>
         
         {% endfor %}
     {% else %}
