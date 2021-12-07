@@ -317,3 +317,9 @@ form {
     width: 80px;
     height: 80px;border: 2px solid rgb(241, 119, 119);
 }
+
+
+body > div > div > div > div.content.col-md-5 > div > div.icons-container > div > div > div.right-icon-container.col-md-6 {
+    display: flex;
+    justify-content: flex-end;
+}

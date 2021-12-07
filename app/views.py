@@ -70,6 +70,7 @@ def home(request):
 
     return render(request, 'home.html', context)
 
+@login_required(login_url='login')
 def new_image(request):
     current_user = request.user
     image = Image(user = request.user )
@@ -108,7 +109,7 @@ def image(request, image_id):
     }
     return render(request, 'image.html', context)
 
-
+@login_required(login_url='login')
 def search_results(request):
     if 'profile' in request.GET and request.GET['profile']:
         search_query = request.GET.get('profile')
@@ -126,7 +127,6 @@ def search_results(request):
 
 
 def like_image(request, id):
-    """Display function for Image Likes"""
     likes = Likes.objects.filter(image_id=id).first()
     if Likes.objects.filter(image_id=id, user_id=request.user.id).exists():
         likes.delete()
@@ -141,7 +141,7 @@ def like_image(request, id):
     else:
         likes = Likes(image_id=id, user_id=request.user.id)
         likes.save()
-        image = Image.objects.get(id=id)
+        image = Image.objects.get(id = id)
         image.total_likes = image.total_likes +1
         image.save()
         return redirect('home')
