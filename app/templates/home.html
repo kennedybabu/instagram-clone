@@ -10,8 +10,11 @@
         </div>
         <div class="content col-md-5">
 
-            <div class="top-bar">
-                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, eligendi.</h4>
+            <div class="top-bar-icons">
+                <div class="profile-icon-placeholder">
+                    <img src="" alt="">
+                </div>
+                name
             </div>
             {% for image in images %} 
             <a href="{% url 'image' image.id%}">
@@ -80,20 +83,12 @@
                         <div class="profile bigger">
                             <img src="{{ user.profile.profile_photo.url }}" alt="">
                         </div>
-                        <!-- <span>{{ user.profile.username }}</span> -->
+                        <div>
+                            <h4>{{ user.username }}</h4>
+                        </div>
                         {% endif %}
                     </div>
-                    <p>m Ipsum is simply dummy text of the 
-                        printing and typesetting industry. Lorem 
-                        Ipsum has been the industry's standard dummy 
-                        text ever since the 1500s, when an unknown printer 
-                        took a galley of type and scrambled it to make a 
-                        type specimen book. It has survived not only five 
-                        centuries, but also the leap into electronic typesetting
-                        , remaining essentially unchanged. It was popularised i
-                        n the 1960s with the release of Letraset sheets containing 
-                        
-                    </p>
+                    <h5>suggestions for you</h5>
                 </div>
             </div>
         </div>

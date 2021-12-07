@@ -5,11 +5,11 @@ name = "pypi"
 
 [packages]
 django = "*"
-django-bootstrap3 = "*"
 psycopg2 = "*"
 pillow = "*"
 django-registration = "*"
 django-tinymce = "*"
+django-bootstrap3 = "*"
 
 [dev-packages]
 

@@ -1,10 +1,15 @@
 body {
     max-width: 100vw;
     background-color: #efefef;
+    max-width: 100vw;
 }
 
 .base {
     margin-top: 5rem;
+}
+
+body > div {
+    max-width: 100vw;
 }
 
 .intro {
@@ -85,6 +90,15 @@ img {
 }
 .top-bar {
     background-color: #fafafa;
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-icons {
+    background-color: #fafafa;
+    height: 50px;
+    margin-bottom: 2rem;
+    padding: .5rem;
 }
 
 .upper-bar {
@@ -93,6 +107,7 @@ img {
     display: flex;
     justify-content: start;
     align-items: center;
+    padding: .3rem .4rem;
 }
 
 .icons-container {
@@ -265,7 +280,27 @@ form {
     margin-top: 2rem;
 }
 
+.register-page {
+    margin-top: 6rem;
+} 
+
 .bigger img {
     height: 50px;
     width: 50px;
+}
+
+.form-wrapper {
+    background-color: #fafafa;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0; 
+}
+
+.post-btn {
+    background-color: rgb(252, 65, 65);
+}
+
+.holder {
+    margin: 0 auto;
 }

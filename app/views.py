@@ -72,8 +72,9 @@ def home(request):
 
 def new_image(request):
     current_user = request.user
+    image = Image(user = request.user )
     if request.method == 'POST':
-        form = NewImageForm(request.POST, request.FILES)
+        form = NewImageForm(request.POST, request.FILES, instance= image)
         if form.is_valid():
             image = form.save(commit=False)
             image.user = current_user
@@ -81,10 +82,10 @@ def new_image(request):
         return redirect('home')
     else:
         form = NewImageForm()
-    context = {
-        'form':form
-    }
-    return render(request, 'new_image.html', context)
+        context = {
+            'form':form
+        }
+        return render(request, 'new_image.html', context)
 
 def image(request, image_id):
     try:
@@ -130,4 +131,8 @@ def like_post(request, pk):
     post.like += 1
     post.save()
     return redirect('home')
+
+
+# def profile(request, pk):
+
 

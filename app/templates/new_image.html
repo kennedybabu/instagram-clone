@@ -1,34 +1,22 @@
-{% extends 'base.html' %}
-{% load bootstrap3 %} 
 
-{% load static %} 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Image</title>
-    {{ form.media }}
 
-    {% block styles %} 
-    <link rel="stylesheet" href="{% static 'css/baseapp.css' %}"> 
-    {% endblock %}
-</head>
-<body>
+{% extends 'base.html' %} 
 
-    <form  action="{% url 'new_image '%}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-    
-        {% bootstrap_form %}
-        <input type="submit" class="btn btn-success btn-lg" value="Post">
-    </form>
-    
-    {% block scripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    {% bootstrap_javascript %} {% endblock %}
-    
-</body>
-</html>
+{% load bootstrap3 %}
+{% block content %}
+
+<div class="container">
+    <h4>post image</h4>
+    <div class="form-wrapper">
+        <form  action="{% url 'new_image' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                
+            {% bootstrap_form form%}
+            <input type="submit" class="btn post-btn" value="Post">
+        </form>
+    </div>
+</div>   
+
+{% endblock %}
 
 
