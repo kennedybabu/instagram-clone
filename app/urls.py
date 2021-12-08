@@ -1,4 +1,3 @@
-from django.conf.urls import url
 from django.urls import include, path
 from . import views
 from django.conf import settings
@@ -12,8 +11,8 @@ urlpatterns = [
     path('like/<int:id>/', views.like_image, name='like_image'),
 
     path('', views.home, name='home'),
-    url(r'^image/(\d+)', views.image, name='image'),
-    url(r'^search/', views.search_results, name='search_results'),
+    path('image/(\d+)', views.image, name='image'),
+    path('search/', views.search_results, name='search_results'),
     path('new_image/', views.new_image, name='new_image'),
 
 ]
