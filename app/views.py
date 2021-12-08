@@ -70,7 +70,6 @@ def home(request):
 
     return render(request, 'home.html', context)
 
-@login_required(login_url='login')
 def new_image(request):
     current_user = request.user
     image = Image(user = request.user )
@@ -88,9 +87,9 @@ def new_image(request):
         }
         return render(request, 'new_image.html', context)
 
-def image(request, image_id):
+def image(request, id):
     try:
-        image = Image.objects.get( id = image_id)
+        image = Image.objects.get(image_id=id)
     except ObjectDoesNotExist:
         raise Http404()
     comments = image.comment_set.all()
@@ -110,6 +109,7 @@ def image(request, image_id):
     return render(request, 'image.html', context)
 
 @login_required(login_url='login')
+
 def search_results(request):
     if 'profile' in request.GET and request.GET['profile']:
         search_query = request.GET.get('profile')
