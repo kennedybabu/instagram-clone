@@ -89,7 +89,7 @@ def new_image(request):
 
 def image(request, id):
     try:
-        image = Image.objects.get(image_id=id)
+        image = Image.objects.get(id=id)
     except ObjectDoesNotExist:
         raise Http404()
     comments = image.comment_set.all()
