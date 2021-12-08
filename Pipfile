@@ -15,6 +15,7 @@ python-decouple = "*"
 django-heroku = "*"
 dj-database-url = "*"
 django-cloudinary-storage = "*"
+gunicorn = "*"
 
 [dev-packages]
 
