@@ -2,7 +2,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import Http404
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-
+from django.contrib.auth.models import User
 from app.forms import NewImageForm
 from .models import Comment, Image, Profile, Likes
 from django.contrib.auth.decorators import login_required
@@ -109,7 +109,6 @@ def image(request, id):
     return render(request, 'image.html', context)
 
 @login_required(login_url='login')
-
 def search_results(request):
     if 'profile' in request.GET and request.GET['profile']:
         search_query = request.GET.get('profile')
@@ -145,6 +144,19 @@ def like_image(request, id):
         image.total_likes = image.total_likes +1
         image.save()
         return redirect('home')
+
+def view_profile(request, id):
+    user = User.objects.get(id = id)
+    try:
+        profile = Profile.objects.get(user = user)
+        posts = Image.objects.get(user = user)
+        context = {
+            'profile': profile,
+            'posts':posts
+        }
+        return render(request, 'profile.html')
+    except:
+        messages.warning(request, 'Sorry, but it seems the profile is notset up', context)
 
 
 

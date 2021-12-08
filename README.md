@@ -8,7 +8,7 @@ upload a picture, comment and like their favorite posts.
 ## Technologies Used
 
 - HTML & CSS (Bootstrap)
-- LucidChart to creat the ERD diagram
+- LucidChart to create the ERD diagram
 - Python for the functionalities
 - SQLAlchemy for the database
 - Django as the framework
