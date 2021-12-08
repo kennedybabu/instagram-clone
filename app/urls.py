@@ -11,7 +11,7 @@ urlpatterns = [
     path('like/<int:id>/', views.like_image, name='like_image'),
 
     path('', views.home, name='home'),
-    path('image/(\d+)', views.image, name='image'),
+    path('image/(<int:id>/)', views.image, name='image'),
     path('search/', views.search_results, name='search_results'),
     path('new_image/', views.new_image, name='new_image'),
 
