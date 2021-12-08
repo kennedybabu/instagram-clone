@@ -1,0 +1,1 @@
+web: gunicorn cheki.wsgi --log-file -

@@ -10,6 +10,8 @@ pillow = "*"
 django-registration = "*"
 django-tinymce = "*"
 django-bootstrap3 = "*"
+whitenoise = "*"
+python-decouple = "*"
 
 [dev-packages]
 
