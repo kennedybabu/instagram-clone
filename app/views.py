@@ -146,17 +146,17 @@ def like_image(request, id):
         return redirect('home')
 
 def view_profile(request, id):
-    user = User.objects.get(id = id)
     try:
-        profile = Profile.objects.get(user = user)
-        posts = Image.objects.get(user = user)
+        profile = Profile.objects.get(id = id)
+        # images = Image.objects.get(id =id)
         context = {
             'profile': profile,
-            'posts':posts
+                       
         }
-        return render(request, 'profile.html')
+        return render(request, 'profile.html', context)
     except:
-        messages.warning(request, 'Sorry, but it seems the profile is notset up', context)
+        messages.warning(request, 'Sorry, but it seems the profile is not set up', context)
+        return redirect('home')
 
 
 

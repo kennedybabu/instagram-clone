@@ -80,7 +80,7 @@
                     <div class="top-bar">
                         {% if request.user.is_authenticated %}
                         <div class="profile bigger">
-                            <img src="{{ user.profile.profile_photo.url }}" alt="">
+                            <a href="{% url 'profile' user.id %}"><img src="{{ user.profile.profile_photo.url }}" alt=""></a>
                         </div>
                         <div>
                             <h4>{{ user.username }}</h4>

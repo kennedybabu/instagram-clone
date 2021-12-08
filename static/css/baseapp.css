@@ -323,3 +323,7 @@ body > div > div > div > div.content.col-md-5 > div > div.icons-container > div 
     display: flex;
     justify-content: flex-end;
 }
+
+.view-profile {
+    margin-top: 6rem;
+}
