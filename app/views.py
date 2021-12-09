@@ -146,16 +146,17 @@ def like_image(request, id):
         return redirect('home')
 
 def view_profile(request, id):
-    try:
-        profile = Profile.objects.get(id = id)
-        context = {
-            'profile': profile,
-                       
-        }
-        return render(request, 'profile.html', context)
-    except:
-        messages.warning(request, 'Sorry, but it seems the profile is not set up', context)
-        return redirect('home')
+    # try:
+    #     profile = Profile.objects.get(id = id)
+    #     context = {
+    #         'profile': profile,                       
+    #     }
+    #     return render(request, 'profile.html', context)
+    # except:
+    #     messages.warning(request, 'Sorry, but it seems the profile is not set up', context)
+    #     return redirect('home')
+    profile = Profile.objects.get( id = id)
+    return render(request, 'profile.html', {"profile":profile})
 
 def update_profile(request):
     if request.method == 'POST':
