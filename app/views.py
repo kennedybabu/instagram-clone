@@ -154,7 +154,7 @@ def view_profile(request, id):
         }
         return render(request, 'profile.html', context)
     except:
-        messages.warning(request, 'Sorry, but it seems the profile is not set up', context)
+        messages.warning(request, 'Sorry, but it seems the profile is not set up')
         return redirect('home')
   
 
