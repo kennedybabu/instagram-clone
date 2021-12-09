@@ -2,6 +2,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import Http404
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
+from django.urls import reverse
 from django.contrib.auth.models import User
 from app.forms import NewImageForm, UpdateProfileForm
 from .models import Comment, Image, Profile, Likes
@@ -146,17 +147,16 @@ def like_image(request, id):
         return redirect('home')
 
 def view_profile(request, id):
-    # try:
-    #     profile = Profile.objects.get(id = id)
-    #     context = {
-    #         'profile': profile,                       
-    #     }
-    #     return render(request, 'profile.html', context)
-    # except:
-    #     messages.warning(request, 'Sorry, but it seems the profile is not set up', context)
-    #     return redirect('home')
-    profile = Profile.objects.get( id = id)
-    return render(request, 'profile.html', {"profile":profile})
+    try:
+        profile = Profile.objects.get(id = id)
+        context = {
+            'profile': profile,                       
+        }
+        return render(request, 'profile.html', context)
+    except:
+        messages.warning(request, 'Sorry, but it seems the profile is not set up', context)
+        return redirect('home')
+  
 
 def update_profile(request):
     if request.method == 'POST':
@@ -166,7 +166,7 @@ def update_profile(request):
         }
         if form.is_valid():
             form.save()
-            return redirect('view_profile')
+            return redirect(reverse('view_profile', kwargs={"id": request.user.profile.id }))
         else:
             messages.warning(request, 'There was a problem updating your profile')
             return redirect('update_profile')
