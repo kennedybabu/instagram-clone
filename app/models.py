@@ -139,3 +139,7 @@ class Likes(models.Model):
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+
+
+for user in User.objects.all():
+    Profile.objects.get_or_create(user = user)
