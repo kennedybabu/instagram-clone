@@ -89,10 +89,15 @@ img {
     height: 60%;
     border-radius: 50px;
 }
+
 .top-bar {
     background-color: #fafafa;
     display: flex;
     align-items: center;
+    border: 1px solid  rgba(128, 128, 128, 0.37);
+}
+
+.profile-icon-placeholder {
     border: 1px solid  rgba(128, 128, 128, 0.37);
 }
 

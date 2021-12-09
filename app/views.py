@@ -3,7 +3,7 @@ from django.http.response import Http404
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from app.forms import NewImageForm
+from app.forms import NewImageForm, UpdateProfileForm
 from .models import Comment, Image, Profile, Likes
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -148,7 +148,6 @@ def like_image(request, id):
 def view_profile(request, id):
     try:
         profile = Profile.objects.get(id = id)
-        # images = Image.objects.get(id =id)
         context = {
             'profile': profile,
                        
@@ -158,6 +157,21 @@ def view_profile(request, id):
         messages.warning(request, 'Sorry, but it seems the profile is not set up', context)
         return redirect('home')
 
+def update_profile(request):
+    if request.method == 'POST':
+        form = UpdateProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        context = {
+            'form': form
+        }
+        if form.is_valid():
+            form.save()
+            return redirect('view_profile')
+        else:
+            messages.warning(request, 'There was a problem updating your profile')
+            return redirect('update_profile')
+    else:
+        form = UpdateProfileForm(instance=request.user.profile)
+        return render(request, 'update_profile.html', {"form":form})
 
 
 

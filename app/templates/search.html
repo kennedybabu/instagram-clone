@@ -7,7 +7,7 @@
         {% for profile in searched_profiles %} 
         <h2>{{ profile.username }}</h2>
         <div class="searched-pic">
-            <a href="{% url 'profile' user.id %}"><img src="{{ profile.profile_photo.url  }}" alt="profile photo"></a>
+            <a href="{% url 'view_profile' user.id %}"><img src="{{ profile.profile_photo.url  }}" alt="profile photo"></a>
         </div>
         
         {% endfor %}

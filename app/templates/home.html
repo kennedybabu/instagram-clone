@@ -13,7 +13,7 @@
             <div class="top-bar-icons">
                 <div class="profile-icon-placeholder">
                 </div>
-                name
+                
             </div>
             {% for image in images %} 
             <a href="{% url 'image' image.id %}">
@@ -80,7 +80,7 @@
                     <div class="top-bar">
                         {% if request.user.is_authenticated %}
                         <div class="profile bigger">
-                            <a href="{% url 'profile' user.id %}"><img src="{{ user.profile.profile_photo.url }}" alt=""></a>
+                            <a href="{% url 'view_profile' user.id %}"><img src="{{ user.profile.profile_photo.url }}" alt=""></a>
                         </div>
                         <div>
                             <h4>{{ user.username }}</h4>
