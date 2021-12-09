@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.fields.related import ManyToManyField
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
+from cloudinary.models import CloudinaryField
 
 
 # Create your models here.
@@ -11,7 +12,7 @@ class Profile(models.Model):
     date_joined = models.DateTimeField(auto_now_add=True)
     bio = models.TextField(blank=True)
     followers = ManyToManyField(User, related_name='followers', blank=True)
-    profile_photo = models.ImageField('image', upload_to = 'profiles/', blank=True, null=True)
+    profile_photo = CloudinaryField('image', null=True )
 
     def save_profile(self):
         '''
@@ -53,7 +54,7 @@ class Profile(models.Model):
 
 class Image(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    image_content = models.ImageField('image')
+    image_content = CloudinaryField('image')
     image_name = models.CharField(max_length=40)
     image_caption = models.TextField(null=True, blank=True)
     total_likes = models.IntegerField(default=0)
